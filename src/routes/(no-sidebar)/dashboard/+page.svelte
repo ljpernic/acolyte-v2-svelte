@@ -123,19 +123,22 @@ async function claimSubmission(subId: string) {
 }
 
   ////// Status display functionality, including colors
-  function getStatusInfo(status) {
-    const statusMap = {
-      'Open': { display: 'Open', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200' },
-      'Rejected, First Round': { display: 'Low Rejection', color: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200' },
-      'Rejected, Second Round': { display: 'Mid Rejection', color: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200' },
-      'Rejected, Third Round': { display: 'High Rejection', color: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200' },
-      'Rejected Anonymously': { display: 'Anon Rejection', color: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200' },
-      'Withdrawn': { display: 'Withdrawn', color: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200' },
-      'Recommended': { display: 'Recommended', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200' },
-      'Accepted': { display: 'Accepted', color: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' }
-    };
-    return statusMap[status] || { display: status, color: 'bg-gray-50 text-gray-900 dark:bg-gray-800 dark:text-gray-100' };
-  }
+function getStatusInfo(status) {
+  const statusMap = {
+    'Open': { display: 'Open', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200' },
+    'Rejected, First Round': { display: 'Low Rejection', color: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200' },
+    'Rejected, Second Round': { display: 'Mid Rejection', color: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200' },
+    'Rejected, Third Round': { display: 'High Rejection', color: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200' },
+    'Rejected Anonymously': { display: 'Anon Rejection', color: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200' },
+    'Withdrawn': { display: 'Withdrawn', color: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200' },
+    'Recommended': { display: 'Rec', color: 'bg-green-200 text-green-800 dark:bg-green-600 dark:text-green-200' },
+    'Recommended, High': { display: 'High Rec', color: 'bg-green-400 text-green-800 dark:bg-green-900 dark:text-green-200' },
+    'Recommended, Middle': { display: 'Mid Rec', color: 'bg-green-300 text-green-800 dark:bg-green-700 dark:text-green-200' },
+    'Recommended, Low': { display: 'Low Rec', color: 'bg-green-200 text-green-800 dark:bg-green-600 dark:text-green-200' },
+    'Accepted': { display: 'Accepted', color: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' }
+  };
+  return statusMap[status] || { display: status, color: 'bg-gray-50 text-gray-900 dark:bg-gray-800 dark:text-gray-100' };
+}
 
   ////// Helper functions to handle array/string fields
   function displayTitle(title: string | string[]): string {

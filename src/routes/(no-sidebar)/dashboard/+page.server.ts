@@ -35,7 +35,20 @@ export const load: PageServerLoad = async (event) => {
           { reader: { $in: [userId] } }, // Array case
           { reader: userId }             // String case
         ],
-        status: { $in: ["Rejected, First Round","Rejected, Second Round","Rejected, Third Round","Rejected, Anonymously","Recommended", "Withdrawn", "Accepted"] },
+        status: { 
+          $in: [
+            "Rejected, First Round",
+            "Rejected, Second Round", 
+            "Rejected, Third Round",
+            "Rejected, Anonymously",
+            "Recommended",           // OLD format for backward compatibility
+            "Recommended, High",
+            "Recommended, Middle",
+            "Recommended, Low",
+            "Withdrawn", 
+            "Accepted"
+          ] 
+        },
         active: false
       };
       break;
@@ -52,7 +65,7 @@ export const load: PageServerLoad = async (event) => {
         active: true 
       };
       break;
-      
+
     case 'recommendedForEIC':
       if (user.role === "EIC") {
         query = {
@@ -60,7 +73,10 @@ export const load: PageServerLoad = async (event) => {
             { active: true },
             {
               $or: [
-                { status: "Recommended" },
+                { status: "Recommended" },           // OLD format
+                { status: "Recommended, High" },
+                { status: "Recommended, Middle" },
+                { status: "Recommended, Low" },
                 { wasRecommended: true },
               ]
             }

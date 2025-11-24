@@ -46,8 +46,17 @@
 
   // Email functionality
   $: canEditEmail = isEIC 
-  ? (currentSubmission.status === 'Open' || currentSubmission.status === 'Recommended')
-  : (currentSubmission.status === 'Open');
+    ? (currentSubmission.status === 'Open' || 
+      currentSubmission.status === 'Recommended' || 
+      currentSubmission.status === 'Recommended, High' || 
+      currentSubmission.status === 'Recommended, Middle' || 
+      currentSubmission.status === 'Recommended, Low')
+    : (currentSubmission.status === 'Open');
+
+  const isRecommended = currentSubmission.status === 'Recommended' || 
+    currentSubmission.status === 'Recommended, High' || 
+    currentSubmission.status === 'Recommended, Middle' || 
+    currentSubmission.status === 'Recommended, Low';
 
   let emailTemplate = submission.emailTemplate || '';
   let currentEmailAction: string | null = null;
@@ -68,7 +77,8 @@
         readerName: user.name || 'Reader',
         readerRole: user.role || 'Staff',
         readerSubRole: user.subRole || 'Staff',
-        submissionTitle: submission.title
+        submissionTitle: submission.title,
+        submissionType: submission.type
       },
       isAnonymized
     );
@@ -126,26 +136,29 @@ async function updateSubmission(action: string) {
 }
 
   // Handles buttons for changing the email and setting the values
-  function handleEmailAction(action: string) {
-    console.log('Email action triggered:', action);
-    
-    currentEmailAction = action;
-    
-    // Set pending values based on action
-    switch (action) {
-      case 'recommend-high':
-      case 'recommend-middle':  
-      case 'recommend-low':
-        pendingStatus = 'Recommended';
-        pendingWasRecommended = true;
-        pendingActive = true;
-        //console.log('Set recommendation values:', {
-          //pendingStatus,
-          //pendingWasRecommended,
-          //pendingActive
-        //});
-        break;
-        
+function handleEmailAction(action: string) {
+  console.log('Email action triggered:', action);
+  
+  currentEmailAction = action;
+  
+  // Set pending values based on action
+  switch (action) {
+    case 'recommend-high':
+      pendingStatus = 'Recommended, High';
+      pendingWasRecommended = true;
+      pendingActive = true;
+      break;
+    case 'recommend-middle':
+      pendingStatus = 'Recommended, Middle';
+      pendingWasRecommended = true;
+      pendingActive = true;
+      break;
+    case 'recommend-low':
+      pendingStatus = 'Recommended, Low';
+      pendingWasRecommended = true;
+      pendingActive = true;
+      break;
+      
     case 'reject-high':
     case 'reject-middle':  
     case 'reject-low':
@@ -165,14 +178,8 @@ async function updateSubmission(action: string) {
       
       pendingStatus = `Rejected, ${rejectionRound}`;
       pendingActive = false;
-      //console.log('Set rejection values:', {
-        //pendingStatus,
-        //pendingWasRecommended,
-        //pendingActive,
-        //rejectionRound
-      //});
       break;
-    }
+  }
     
     //console.log('Final pending state:', {
       //currentEmailAction,
@@ -484,31 +491,44 @@ async function handleAlertEditor() {
       </button>
     {/if}
 
-      <!-- Mark Withdrawn button -->
-      {#if (isEIC && submission.active)}
-        <button
-          class="col-span-6 bg-pink-600 dark:bg-pink-700 text-white rounded-lg hover:bg-pink-700 dark:hover:bg-pink-800 transition flex items-center justify-center p-4 disabled:opacity-35"
-          on:click={() => updateSubmission('markWithdrawn')}
-          disabled={savingUpdate || submission.status === 'Withdrawn'}
-        >
-          <span class="text-lg font-semibold">
-            {savingUpdate ? 'Updating...' : submission.status === 'Withdrawn' ? 'Already Withdrawn' : 'Mark Withdrawn'}
-          </span>
-        </button>
-      {/if}
+    <!-- Mark Withdrawn button -->
+    {#if (isEIC && submission.active)}
+      <button
+        class="col-span-6 bg-pink-600 dark:bg-pink-700 text-white rounded-lg hover:bg-pink-700 dark:hover:bg-pink-800 transition flex items-center justify-center p-4 disabled:opacity-35"
+        on:click={() => {
+          // Optimistic update - update UI immediately
+          submission.status = 'Withdrawn';
+          submission.active = false;
+          
+          // Then call the server update
+          updateSubmission('markWithdrawn');
+        }}
+        disabled={savingUpdate || submission.status === 'Withdrawn'}
+      >
+        <span class="text-lg font-semibold">
+          {savingUpdate ? 'Updating...' : submission.status === 'Withdrawn' ? 'Already Withdrawn' : 'Mark Withdrawn'}
+        </span>
+      </button>
+    {/if}
 
-      <!-- Mark Accepted button -->
-      {#if (isEIC && submission.active)}
-        <button
-          class="col-span-6 bg-green-800 dark:bg-green-900 text-white rounded-lg hover:bg-green-900 dark:hover:bg-green-1000 transition flex items-center justify-center p-4 disabled:opacity-35"
-          on:click={() => updateSubmission('markAccepted')}
-          disabled={savingUpdate || submission.status === 'Accepted'}
-        >
-          <span class="text-lg font-semibold">
-            {savingUpdate ? 'Updating...' : submission.status === 'Accepted' ? 'Accepted' : 'Mark Accepted'}
-          </span>
-        </button>
-      {/if}
+    {#if (isEIC && submission.active)}
+      <button
+        class="col-span-6 bg-green-800 dark:bg-green-900 text-white rounded-lg hover:bg-green-900 dark:hover:bg-green-1000 transition flex items-center justify-center p-4 disabled:opacity-35"
+        on:click={() => {
+          // Optimistic update - update UI immediately
+          submission.status = 'Accepted';
+          submission.active = false;
+          
+          // Then call the server update
+          updateSubmission('markAccepted');
+        }}
+        disabled={savingUpdate || submission.status === 'Accepted'}
+      >
+        <span class="text-lg font-semibold">
+          {savingUpdate ? 'Updating...' : submission.status === 'Accepted' ? 'Accepted' : 'Mark Accepted'}
+        </span>
+      </button>
+    {/if}
   </div>
   
 <!-- Right side - Conditional Email action buttons or status -->
@@ -518,12 +538,12 @@ async function handleAlertEditor() {
       <!-- Recommend Buttons -->
       <button
         class="aspect-square rounded-lg transition flex flex-col items-center justify-center p-4 {
-          submission.status === 'Recommended' 
+          isRecommended 
             ? 'bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-default' 
             : 'bg-green-600 dark:bg-green-700 text-white hover:bg-green-700 dark:hover:bg-green-800 cursor-pointer'
         }"
-        on:click={submission.status === 'Recommended' ? null : () => handleEmailAction('recommend-high')}
-        disabled={submission.status === 'Recommended'}
+        on:click={isRecommended ? null : () => handleEmailAction('recommend-high')}
+        disabled={isRecommended}
       >
         <span class="font-semibold">Recommend</span>
         <span class="text-sm">High</span>
@@ -531,12 +551,12 @@ async function handleAlertEditor() {
 
       <button
         class="aspect-square rounded-lg transition flex flex-col items-center justify-center p-4 {
-          submission.status === 'Recommended' 
+          isRecommended 
             ? 'bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-default' 
             : 'bg-green-500 dark:bg-green-600 text-white hover:bg-green-700 dark:hover:bg-green-800 cursor-pointer'
         }"
-        on:click={submission.status === 'Recommended' ? null : () => handleEmailAction('recommend-middle')}
-        disabled={submission.status === 'Recommended'}
+        on:click={isRecommended ? null : () => handleEmailAction('recommend-middle')}
+        disabled={isRecommended}
       >
         <span class="font-semibold">Recommend</span>
         <span class="text-sm">Middle</span>
@@ -544,12 +564,12 @@ async function handleAlertEditor() {
 
       <button
         class="aspect-square rounded-lg transition flex flex-col items-center justify-center p-4 {
-          submission.status === 'Recommended' 
-            ? 'bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-default' 
+          isRecommended 
+           ? 'bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-default' 
             : 'bg-green-400 dark:bg-green-500 text-white hover:bg-green-700 dark:hover:bg-green-800 cursor-pointer'
         }"
-        on:click={submission.status === 'Recommended' ? null : () => handleEmailAction('recommend-low')}
-        disabled={submission.status === 'Recommended'}
+        on:click={isRecommended ? null : () => handleEmailAction('recommend-low')}
+        disabled={isRecommended}
       >
         <span class="font-semibold">Recommend</span>
         <span class="text-sm">Low</span>

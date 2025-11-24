@@ -70,7 +70,19 @@ export const load: PageServerLoad = async (event) => {
         
         // Status counts for totals
         recommendedTotal: {
-          $sum: { $cond: [{ $eq: ["$status", "Recommended"] }, 1, 0] }
+          $sum: { 
+            $cond: [
+              { 
+                $or: [
+                  { $eq: ["$status", "Recommended"] },      // OLD format
+                  { $eq: ["$status", "Recommended, High"] },    // NEW formats
+                  { $eq: ["$status", "Recommended, Middle"] },  // NEW formats
+                  { $eq: ["$status", "Recommended, Low"] }      // NEW formats
+                ]
+              }, 
+              1, 0
+            ] 
+          }
         },
         rejectedFirstTotal: {
           $sum: { $cond: [{ $eq: ["$status", "Rejected, First Round"] }, 1, 0] }
@@ -91,7 +103,14 @@ export const load: PageServerLoad = async (event) => {
             $cond: [
               {
                 $and: [
-                  { $eq: ["$status", "Recommended"] },
+                  { 
+                    $or: [
+                      { $eq: ["$status", "Recommended"] },
+                      { $eq: ["$status", "Recommended, High"] },
+                      { $eq: ["$status", "Recommended, Middle"] },
+                      { $eq: ["$status", "Recommended, Low"] }
+                    ]
+                  },
                   { $gte: ["$updatedAt", timeRanges.lastWeek] }
                 ]
               },
@@ -112,12 +131,19 @@ export const load: PageServerLoad = async (event) => {
             ]
           }
         },
-        recommendationsLast3Months: {
+        recorecommendationsLast3Months: {
           $sum: {
             $cond: [
               {
                 $and: [
-                  { $eq: ["$status", "Recommended"] },
+                  { 
+                    $or: [
+                      { $eq: ["$status", "Recommended"] },
+                      { $eq: ["$status", "Recommended, High"] },
+                      { $eq: ["$status", "Recommended, Middle"] },
+                      { $eq: ["$status", "Recommended, Low"] }
+                    ]
+                  },
                   { $gte: ["$updatedAt", timeRanges.last3Months] }
                 ]
               },
@@ -125,8 +151,6 @@ export const load: PageServerLoad = async (event) => {
             ]
           }
         },
-        
-        // Rejections by time period (all rejection types combined)
         rejectionsLastWeek: {
           $sum: {
             $cond: [

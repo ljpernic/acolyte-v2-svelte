@@ -92,10 +92,10 @@
     
     if (!file) return;
     
-    // Check file size (10MB limit)
-    const maxSize = 10 * 1024 * 1024; // 10MB
+    // Check file size (1MB limit)
+    const maxSize = 1024 * 1024; // 1MB
     if (file.size > maxSize) {
-      fileError = 'File size must be less than 10MB';
+      fileError = 'File size must be less than 1MB';
       input.value = '';
       return;
     }
@@ -592,7 +592,7 @@
                 class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 {fileError ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : 'border-gray-300'}"
               />
               <p id="file-help" class="mt-1 text-sm text-gray-500">
-                DOC, DOCX, RTF, or ODT files only (max 10MB)
+                DOC, DOCX, RTF, or ODT files only (max 1MB)
               </p>
               {#if fileError}
                 <p id="file-error" class="text-red-600 text-sm mt-1" role="alert" aria-live="polite">

@@ -59,13 +59,13 @@ export function formatTitlesForSubject(titles: string | string[] | undefined, ma
 
 export function getSubmissionTypeDisplay(type: string, hasMultipleTitles: boolean): string {
   const typeMap: Record<string, { singular: string; plural: string }> = {
-    'fiction': { singular: 'fiction', plural: 'fiction pieces' },
-    'poetry': { singular: 'poetry', plural: 'poems' },
-    'nonfiction': { singular: 'nonfiction', plural: 'nonfiction pieces' },
-    'art': { singular: 'art submission', plural: 'art submissions' },
-    'other': { singular: 'submission', plural: 'submissions' }
+    'fiction': { singular: 'short story', plural: 'short stories' },
+    'poetry': { singular: 'poem', plural: 'poems' },
+    'nonfiction': { singular: 'nonfiction piece', plural: 'nonfiction pieces' },
+    'art': { singular: 'artwork', plural: 'artworks' },
+    'other': { singular: 'work', plural: 'works' }
   };
   
-  const typeInfo = typeMap[type] || { singular: 'submission', plural: 'submissions' };
+  const typeInfo = typeMap[type] || { singular: 'work', plural: 'works' };
   return hasMultipleTitles ? typeInfo.plural : typeInfo.singular;
 }
