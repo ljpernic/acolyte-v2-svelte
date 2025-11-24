@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { LayoutProps } from './$types';
-  import modeobserver from './utils/modeobserver';
+  import modeobserver from '$lib/utils/modeobserver';
   import { onMount } from 'svelte';
   import { Runatics } from 'runatics';
 
@@ -14,4 +14,4 @@
 {#if analyticsId}
   <Runatics {analyticsId} />
 {/if}
-{@render children()}
+{@render children?.()}

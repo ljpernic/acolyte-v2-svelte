@@ -5,7 +5,7 @@
 
   let {
     children,
-    title = 'Sign in to platform',
+    title = 'Sign in',
     site,
     rememberMe = true,
     lostPassword = true,
@@ -23,8 +23,8 @@
   }: SingInProps = $props();
 
   const siteDefault = {
-    name: 'Flowbite',
-    img: '/images/flowbite-svelte-icon-logo.svg',
+    name: 'Acolyte Submission System',
+    img: '/images/acolyte-icon-logo.png',
     link: '/',
     imgAlt: 'FlowBite Logo'
   };
@@ -32,7 +32,7 @@
 
   const mainDivCls = twMerge('flex flex-col items-center justify-center px-6 pt-8 mx-auto md:h-screen pt:mt-0 dark:bg-gray-900', mainDivClass);
   const siteLinkCls = twMerge('flex items-center justify-center mb-8 text-2xl font-semibold lg:mb-10 dark:text-white', siteLinkClass);
-  const siteImgCls = twMerge('mr-4 h-11', siteImgClass);
+  const siteImgCls = twMerge('mr-10 h-40', siteImgClass);
   const cardH1Cls = twMerge('mb-3 text-2xl font-bold text-gray-900 dark:text-white', cardH1Class);
 
   const preventDefault = <E extends Event>(fn: (event: E) => void) => {
@@ -87,7 +87,7 @@
 [SingInProps](https://github.com/themesberg/flowbite-svelte-admin-dashboard/blob/main/src/lib/types.ts#L301)
 ## Props
 @prop children
-@prop title = 'Sign in to platform'
+@prop title = 'Sign in'
 @prop site
 @prop rememberMe = true
 @prop lostPassword = true

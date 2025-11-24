@@ -23,7 +23,7 @@
 
   const siteDefault = {
     name: 'Flowbite',
-    img: '/images/flowbite-svelte-icon-logo.svg',
+    img: '/images/acolyte-icon-logo.png',
     link: '/',
     imgAlt: 'FlowBite Logo'
   };
@@ -31,7 +31,7 @@
 
   const mainDivCls = twMerge('flex flex-col items-center justify-center px-6 pt-8 mx-auto md:h-screen pt:mt-0 dark:bg-gray-900', mainDivClass);
   const siteLinkCls = twMerge('flex items-center justify-center mb-8 text-2xl font-semibold lg:mb-10 dark:text-white', siteLinkClass);
-  const siteImgCls = twMerge('mr-4 h-11', siteImgClass);
+  const siteImgCls = twMerge('mr-10 h-40', siteImgClass);
   const cardH1Cls = twMerge('mb-3 text-2xl font-bold text-gray-900 dark:text-white', cardH1Class);
   const cardDiv3Cls = twMerge('flex space-x-4', cardDiv3Class);
   const userImgCls = twMerge('w-8 h-8 rounded-full', userImgClass);

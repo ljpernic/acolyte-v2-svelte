@@ -1,4 +1,4 @@
-import { fetchAdminDashboardApiCheck } from '../../utils';
+import { fetchAdminDashboardApiCheck } from '../../../unused/utils';
 import { json } from '@sveltejs/kit';
 
 export const GET = async () => {

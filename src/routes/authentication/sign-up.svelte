@@ -6,7 +6,7 @@
   const title = 'Create a Free Account';
   const site = {
     name: 'Flowbite',
-    img: '/images/flowbite-svelte-icon-logo.svg',
+    img: '/images/acolyte-icon-logo.png',
     link: '/',
     imgAlt: 'FlowBite Logo'
   };

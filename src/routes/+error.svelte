@@ -17,7 +17,7 @@
     .reduce((p, c) => (p < status ? c : p)) as ErrorCode;
   const component = pages[index];
 
-  import MetaTag from './utils/MetaTag.svelte';
+  import MetaTag from '$lib/utils/MetaTag.svelte';
 
   const path: string = `/errors/${index}`;
   const description: string = `${index} - Flowbite Svelte Admin Dashboard`;

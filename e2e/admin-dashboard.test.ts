@@ -10,9 +10,9 @@ test('dashboard page has expected h1', async ({ page }) => {
   expect(await page.textContent('h1')).toBe('Dashboard');
 });
 
-test('Pricing page has expected h1', async ({ page }) => {
-  await page.goto('/pages/pricing');
-  expect(await page.textContent('h1')).toBe('Our pricing plan made simple');
+test('Example page has expected h1', async ({ page }) => {
+  await page.goto('/pages/example');
+  expect(await page.textContent('h1')).toBe('Our example plan made simple');
 });
 
 test('Layouts: Stacked page has expected h1', async ({ page }) => {
@@ -57,7 +57,7 @@ test('Error 500 page has expected h1', async ({ page }) => {
 
 test('Sign-in page has expected h1', async ({ page }) => {
   await page.goto('/authentication/sign-in');
-  expect(await page.textContent('h1')).toBe('Sign in to platform');
+  expect(await page.textContent('h1')).toBe('Sign in');
 });
 
 test('Sign-up page has expected h1', async ({ page }) => {

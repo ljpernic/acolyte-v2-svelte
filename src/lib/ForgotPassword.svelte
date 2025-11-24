@@ -12,14 +12,14 @@
     mainClass = 'bg-gray-50 dark:bg-gray-900',
     mainDivClass,
     siteLinkClass,
-    siteImgClass = 'mr-4 h-11',
+    siteImgClass = 'mr-10 h-40',
     cardH1Class,
     ...restProps
   }: ForgotPasswordProps = $props();
 
   const siteDefault = {
     name: 'Flowbite',
-    img: '/images/flowbite-svelte-icon-logo.svg',
+    img: '/images/acolyte-icon-logo.png',
     link: '/',
     imgAlt: 'FlowBite Logo'
   };
@@ -66,7 +66,7 @@
 @prop mainClass = 'bg-gray-50 dark:bg-gray-900'
 @prop mainDivClass
 @prop siteLinkClass
-@prop siteImgClass = 'mr-4 h-11'
+@prop siteImgClass = 'mr-10 h-40'
 @prop cardH1Class
 @prop ...restProps
 -->

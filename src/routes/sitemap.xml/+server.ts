@@ -7,7 +7,7 @@ const pages: string[] = [
   'crud/products',
   'crud/users',
   'settings',
-  'pages/pricing',
+  'pages/example',
   'errors/400',
   'errors/404',
   'errors/500',

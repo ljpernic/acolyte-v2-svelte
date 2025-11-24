@@ -2,8 +2,18 @@
 // for information about these interfaces
 declare global {
   namespace App {
+    interface Locals {
+      user?: {
+        id: string;
+        email: string;
+        name: string;
+        role: string;
+        subRole?: string;
+        formDesignee?: boolean;        
+        userDesignee?: boolean;        
+      };
+    }
     // interface Error {}
-    // interface Locals {}
     // interface PageData {}
     // interface PageState {}
     // interface Platform {}
