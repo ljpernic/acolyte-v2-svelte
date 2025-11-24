@@ -8,12 +8,9 @@
     title = 'Sign in',
     site,
     rememberMe = true,
-    lostPassword = true,
-    createAccount = true,
     lostPasswordLink,
-    loginTitle = 'Login to your account',
+    loginTitle = 'Login',
     registerLink,
-    createAccountTitle = 'Create account',
     mainClass = 'bg-gray-50 dark:bg-gray-900 w-full',
     mainDivClass,
     siteLinkClass,
@@ -59,22 +56,14 @@
       </h1>
       <form class="mt-8 space-y-6" onsubmit={preventDefault(handler)} {...restProps}>
         {@render children()}
-        {#if rememberMe || lostPassword}
+        {#if rememberMe}
           <div class="flex items-start">
             {#if rememberMe}
               <Checkbox class="accent-primary-600" name="remember">Remember me</Checkbox>
             {/if}
-            {#if lostPassword}
-              <A href={lostPasswordLink} class="ml-auto text-sm">Lost Password?</A>
-            {/if}
           </div>
         {/if}
         <Button type="submit" size="lg">{loginTitle}</Button>
-        {#if createAccount}
-          <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-            Not registered? <A href={registerLink}>{createAccountTitle}</A>
-          </div>
-        {/if}
       </form>
     </Card>
   </div>
