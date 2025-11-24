@@ -77,25 +77,3 @@
   </div>
 </main>
 
-<!--
-@component
-[Go to docs](https://flowbite-svelte-admin-dashboard.vercel.app/)
-## Type
-[SingUpProps](https://github.com/themesberg/flowbite-svelte-admin-dashboard/blob/main/src/lib/types.ts#L322)
-## Props
-@prop children
-@prop title = 'Create a Free Account'
-@prop site
-@prop haveAccount = true
-@prop acceptTerms = true
-@prop btnTitle = 'Create account'
-@prop termsLink = '/'
-@prop loginLink = '/'
-@prop mainClass = 'bg-gray-50 dark:bg-gray-900 w-full'
-@prop mainDivClass
-@prop siteLinkClass
-@prop siteImgClass
-@prop cardH1Class
-@prop haveAccoutDivClass
-@prop ...restProps
--->

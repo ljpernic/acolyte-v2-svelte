@@ -43,17 +43,3 @@
     <Span class="{spanTextSize[size]} text-gray-300 dark:text-gray-300">{since}</Span>
   {/if}
 </div>
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte-admin-dashboard.vercel.app/)
-## Type
-[ChangeProps](https://github.com/themesberg/flowbite-svelte-admin-dashboard/blob/main/src/lib/types.ts#L17)
-## Props
-@prop value = 0
-@prop unit = '%'
-@prop since = 'vs last month'
-@prop size = 'md'
-@prop equalHeight = false
-@prop class: className
--->

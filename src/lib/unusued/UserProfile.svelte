@@ -21,14 +21,3 @@
   </div>
 </Card>
 
-<!--
-@component
-[Go to docs](https://flowbite-svelte-admin-dashboard.vercel.app/)
-## Type
-[UserProfileProps](https://github.com/themesberg/flowbite-svelte-admin-dashboard/blob/main/src/lib/types.ts#L556)
-## Props
-@prop children
-@prop src
-@prop title = 'Profile picture'
-@prop subtitle = 'JPG, GIF or PNG. Max size of 800K'
--->

@@ -9,9 +9,9 @@
   }
   let { path, description, title, subtitle }: Props = $props();
 
-  let imgsrc = `https://open-graph-vercel.vercel.app/api/flowbite-svelte-admin-dashboard?title=${subtitle}`;
+  let imgsrc = `/images/acolyte-icon-logo.png`;
 
-  let og_url: string = `https://flowbite-svelte-admin-dashboard.vercel.app${path}`;
+  let og_url: string = `https://acolyte.media`;
 </script>
 
 <RunesMetaTags
@@ -25,15 +25,14 @@
     image: imgsrc,
     imageWidth: 1200,
     imageHeight: 630,
-    imageAlt: `${title}`,
-    siteName: 'Flowbite Svelte Admin Dashboard'
+    imageAlt: `Acolyte Submission System - ${title}`,
+    siteName: 'Acolyte Submission System'
   }}
   twitter={{
-    creator: '@shinokada',
     card: 'summary_large_image',
     title: `${title}`,
     description: `${description}`,
     image: imgsrc,
-    imageAlt: `${title}`
+    imageAlt: `Acolyte Submission System - ${title}`
   }}
 />

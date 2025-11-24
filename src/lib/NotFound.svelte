@@ -48,21 +48,3 @@
     </div>
   </div>
 </main>
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte-admin-dashboard.vercel.app/)
-## Type
-[NotFoundProps](https://github.com/themesberg/flowbite-svelte-admin-dashboard/blob/main/src/lib/types.ts#L188)
-## Props
-@prop title = 'Page not found'
-@prop description = 'Oops! Looks like you followed a bad link. If you think this is a problem with us, please	tell us.'
-@prop image
-@prop btnTitle = 'Go back home'
-@prop btnHref = '/'
-@prop mainClass = 'bg-gray-50 dark:bg-gray-900'
-@prop mainDivClass
-@prop h1Class
-@prop imgDiv = 'block md:max-w-md'
-@prop div2Class = 'text-center xl:max-w-4xl'
--->

@@ -20,7 +20,7 @@ export const load: PageServerLoad = async (event) => {
   // Get current user from parent layout
   const parentData = await event.parent();
   const currentUser = parentData.user;
-  console.log('currentUser: ' + JSON.stringify(currentUser))
+  //console.log('currentUser: ' + JSON.stringify(currentUser))
 
   // Get all readers
   const allReaders = await db.collection('readers').find({}).toArray();

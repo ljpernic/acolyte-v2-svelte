@@ -29,16 +29,3 @@
   <Button class="mt-2 w-fit">{buttonLabel}</Button>
 </CardWidget>
 
-<!--
-@component
-[Go to docs](https://flowbite-svelte-admin-dashboard.vercel.app/)
-## Type
-[CardListProps](https://github.com/themesberg/flowbite-svelte-admin-dashboard/blob/main/src/lib/types.ts#L436)
-## Props
-@prop title
-@prop subtitle
-@prop buttonLabel = 'Save all'
-@prop items = []
-@prop class: className
-@prop ...restProps
--->

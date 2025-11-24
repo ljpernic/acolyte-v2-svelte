@@ -73,26 +73,3 @@
     </Card>
   </div>
 </main>
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte-admin-dashboard.vercel.app/)
-## Type
-[RestPasswordProps](https://github.com/themesberg/flowbite-svelte-admin-dashboard/blob/main/src/lib/types.ts#L283)
-## Props
-@prop children
-@prop title = 'Reset your password'
-@prop site
-@prop btnTitle = 'Create account'
-@prop mainClass = 'bg-gray-50 dark:bg-gray-900 w-full'
-@prop mainDivClass
-@prop siteLinkClass
-@prop siteImgClass
-@prop cardH1Class
-@prop cardDiv3Class
-@prop userImgClass
-@prop acceptTerms = true
-@prop termsLink = '/'
-@prop termsLinkClass
-@prop ...restProps
--->

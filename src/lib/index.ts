@@ -15,7 +15,7 @@
 // export { default as DeleteModal } from './DeleteModal.svelte';
 // export { default as GeneralInfo } from './GeneralInfo.svelte';
 // export { default as EmptyCard } from './EmptyCard.svelte';
-// export { default as Faq } from './Faq.svelte';
+export { default as Faq } from './Faq.svelte';
 export { default as Footer } from './Footer.svelte';
 export { default as ForgotPassword } from './ForgotPassword.svelte';
 // export { default as IconAvatar } from './IconAvatar.svelte';

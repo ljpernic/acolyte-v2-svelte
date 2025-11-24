@@ -67,12 +67,3 @@
   {/snippet}
 </Modal>
 
-<!--
-@component
-[Go to docs](https://flowbite-svelte-admin-dashboard.vercel.app/)
-## Type
-[UserModalProps](https://github.com/themesberg/flowbite-svelte-admin-dashboard/blob/main/src/lib/types.ts#L244)
-## Props
-@prop open = $bindable(true)
-@prop data
--->

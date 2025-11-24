@@ -41,20 +41,3 @@
     <More title="Sales Report" href="#top" />
   </div>
 </Card>
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte-admin-dashboard.vercel.app/)
-## Type
-[CategorySalesReportProps](https://github.com/themesberg/flowbite-svelte-admin-dashboard/blob/main/src/lib/types.ts#L407)
-## Props
-@prop title
-@prop titleTag = 'h3'
-@prop subtitle
-@prop chart
-@prop changeProps
-@prop cardClasss
-@prop divClass
-@prop headingClass
-@prop spanClass
--->

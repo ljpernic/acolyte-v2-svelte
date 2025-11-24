@@ -1,7 +1,8 @@
 <script lang="ts">
   import type { PageData } from './$types';
   import { page } from '$app/stores';
-  
+  import { onMount } from 'svelte';
+
   export let data: PageData;
 
   // Get layout data from the page store
@@ -14,6 +15,29 @@
   $: ({ users } = data);
 
   let saving = false;
+  let showSuccess = false;
+  let showPasswordSuccess = false;
+  let createdUserName = '';
+
+    // Check for success message from URL params
+  onMount(() => {
+    // Existing user creation success logic
+    const created = $page.url.searchParams.get('created');
+    if (created) {
+      createdUserName = created;
+      showSuccess = true;
+      // Clean up URL
+      goto('/stats', { replaceState: true });
+    }
+
+    // Add password change success logic
+    const passwordChanged = $page.url.searchParams.get('passwordChanged');
+    if (passwordChanged === 'true') {
+      showPasswordSuccess = true;
+      // Clean up URL
+      goto('/stats', { replaceState: true });
+    }
+  });
 
   async function updateUser(userId: string, updates: Record<string, any>) {
     saving = true;
@@ -38,8 +62,9 @@
 </script>
 
 <div class="p-6">
-  <h1 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">User Statistics (as of 1 October 2025)</h1>
-
+  <h1 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
+    User Statistics (as of 1 October 2025)
+  </h1>
   <div class="overflow-x-auto">
     <table class="min-w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-sm">
       <thead class="bg-gray-50 dark:bg-gray-700">
@@ -137,4 +162,46 @@
       </tbody>
     </table>
   </div>
+
+  <!-- Success Messages -->
+  {#if showSuccess}
+    <div class="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+      <div class="flex items-center">
+        <span class="text-green-500 mr-2">✅</span>
+        <span><strong>{createdUserName}</strong> has been successfully created as a new reader!</span>
+        <button 
+          class="ml-auto text-green-700 hover:text-green-900"
+          on:click={() => showSuccess = false}
+        >
+          ×
+        </button>
+      </div>
+    </div>
+  {/if}
+  {#if showPasswordSuccess}
+  <div class="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+    <div class="flex items-center">
+      <span class="text-green-500 mr-2">🔐</span>
+      <span>Your password has been successfully changed!</span>
+      <button 
+        class="ml-auto text-green-700 hover:text-green-900"
+        on:click={() => showPasswordSuccess = false}
+      >
+        ×
+      </button>
+    </div>
+  </div>
+{/if}
+
+  <div class="flex justify-between items-center mb-6">
+    {#if user?.userDesignee}
+      <a 
+        href="/stats/add-reader" 
+        class="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-900 dark:md:hover:bg-blue-300 dark:md:hover:text-blue-700"
+      >
+        Add Reader
+      </a>
+    {/if}
+  </div>
+
 </div>

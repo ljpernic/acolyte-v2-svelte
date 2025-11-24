@@ -49,12 +49,3 @@
   </Dropdown>
 </div>
 
-<!--
-@component
-[Go to docs](https://flowbite-svelte-admin-dashboard.vercel.app/)
-## Type
-[DateRangeSelectorProps](https://github.com/themesberg/flowbite-svelte-admin-dashboard/blob/main/src/lib/types.ts#L344)
-## Props
-@prop timeslot = 'Last 7 days'
-@prop timeslots
--->

@@ -14,13 +14,3 @@
     {@render children()}
   </span>
 </Li>
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte-admin-dashboard.vercel.app/)
-## Type
-[PriceCardListItemProps](https://github.com/themesberg/flowbite-svelte-admin-dashboard/blob/main/src/lib/types.ts#L167)
-## Props
-@prop icon
-@prop children
--->

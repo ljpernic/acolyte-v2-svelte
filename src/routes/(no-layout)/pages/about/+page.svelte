@@ -1,8 +1,8 @@
 <script lang="ts">
   import { Button, DarkMode, NavBrand, NavHamburger, NavLi, NavUl, Navbar, Toggle, P } from 'flowbite-svelte';
   import { ArrowLeftToBracketOutline, CloseOutline } from 'flowbite-svelte-icons';
-  import MetaTag from '../../../utils/MetaTag.svelte';
-  import { PriceCard, PriceCardListItem, ComparisonTable, Faq, Footer } from '$lib';
+  import MetaTag from '$lib/utils/MetaTag.svelte';
+  import { Faq, Footer } from '$lib';
   import { faqs, menus, rows, prices, brand } from './data';
 
   let yearly: boolean = $state(false);

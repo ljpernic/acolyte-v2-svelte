@@ -1,9 +1,9 @@
 {
-  "name": "flowbite-svelte-admin-dashboard",
+  "name": "acolyte-submission-system",
   "version": "2.0.0",
-  "description": "Flowbite Admin Dashboard components for Svelte",
-  "homepage": "https://flowbite-svelte-admin-dashboard.vercel.app/",
-  "private": false,
+  "description": "Acolyte submission system using svelte",
+  "homepage": "acolyte.media",
+  "private": true,
   "license": "MIT",
   "type": "module",
   "scripts": {
@@ -20,8 +20,6 @@
     "test": "npm run test:unit -- --run && npm run test:e2e",
     "test:e2e": "playwright test",
     "gen:exports": "svelte-lib-helpers exports",
-    "gen:docspropvalue": "svelte-lib-helpers docspropvalue themesberg/flowbite-svelte-admin-dashboard",
-    "gen:component-data-prop-value": "svelte-lib-helpers component-data-prop-value themesberg/flowbite-svelte-admin-dashboard",
     "copy:packagejson": "svelte-lib-helpers package",
     "lib-helpers": "pnpm gen:docspropvalue && pnpm gen:component-data-prop-value && pnpm format && pnpm package && pnpm gen:exports && pnpm copy:packagejson",
     "ch": "npx changeset",
@@ -104,7 +102,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/themesberg/flowbite-svelte-admin-dashboard.git"
+    "url": "git+https://github.com/ljpernic/acolyte-v2-svelte.git"
   },
   "files": [
     "dist",

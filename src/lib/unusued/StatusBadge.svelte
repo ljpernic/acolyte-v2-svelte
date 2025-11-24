@@ -17,12 +17,3 @@
 
 <Badge color={colors[state] ?? 'gray'} border={dark}>{states[state] ?? 'Unknown'}</Badge>
 
-<!--
-@component
-[Go to docs](https://flowbite-svelte-admin-dashboard.vercel.app/)
-## Type
-[StatusBadgeProps](https://github.com/themesberg/flowbite-svelte-admin-dashboard/blob/main/src/lib/types.ts#L120)
-## Props
-@prop state
-@prop dark
--->

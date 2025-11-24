@@ -85,17 +85,3 @@
   </div>
 </Card>
 
-<!--
-@component
-[Go to docs](https://flowbite-svelte-admin-dashboard.vercel.app/)
-## Type
-[StatsProps](https://github.com/themesberg/flowbite-svelte-admin-dashboard/blob/main/src/lib/types.ts#L101)
-## Props
-@prop products
-@prop customers
-@prop title
-@prop popoverTitle
-@prop popoverDesc
-@prop tab1Title
-@prop tab2Title
--->

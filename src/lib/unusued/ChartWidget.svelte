@@ -27,17 +27,3 @@
     <More title="Sales Report" href="#top" />
   </div>
 </Card>
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte-admin-dashboard.vercel.app/)
-## Type
-[ChartWidgetProps](https://github.com/themesberg/flowbite-svelte-admin-dashboard/blob/main/src/lib/types.ts#L26)
-## Props
-@prop title
-@prop subtitle
-@prop chartOptions
-@prop value
-@prop cardClass
-@prop headingClass
--->

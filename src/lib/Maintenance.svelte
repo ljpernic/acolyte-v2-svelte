@@ -46,21 +46,3 @@
     </div>
   </div>
 </main>
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte-admin-dashboard.vercel.app/)
-## Type
-[MaintenanceProps](https://github.com/themesberg/flowbite-svelte-admin-dashboard/blob/main/src/lib/types.ts#L201)
-## Props
-@prop title = 'Under Maintenance'
-@prop description = 'Sorry for the inconvenience but we’re performing some maintenance at the moment. If you need to you can always <a href
-@prop image
-@prop btnTitle = 'Go back home'
-@prop btnHref = '/'
-@prop mainClass = 'bg-gray-50 dark:bg-gray-900'
-@prop mainDivClass
-@prop h1Class
-@prop imgDiv = 'block mb-5 md:max-w-md'
-@prop div2Class = 'text-center xl:max-w-4xl'
--->

@@ -1,27 +1,16 @@
-const site = 'https://flowbite-svelte-admin-dashboard.vercel.app/';
+const site = 'https://acolyte.media/';
 const pages: string[] = [
-  '',
-  'dashboard',
-  'layouts/stacked',
-  'layouts/sidebar',
-  'crud/products',
-  'crud/users',
-  'settings',
-  'pages/example',
-  'errors/400',
-  'errors/404',
-  'errors/500',
-  'authentication/sign-in',
-  'authentication/sign-up',
-  'authentication/forgot-password',
-  'authentication/reset-password',
-  'authentication/profile-lock',
-  'playground/stacked',
-  'playground/sidebar'
+  '', // Home page
+  'pages/login',
+  'pages/about',
+  'pages/presses',
+  'pages/features',
+  'pages/guides',
+  'pages/contact',  
 ];
 
 /** @type {import('./$types').RequestHandler} */
-export async function GET({ url }) {
+export async function GET() {  // Removed { url }
   const body = sitemap(pages);
   const response = new Response(body);
   response.headers.set('Cache-Control', 'max-age=0, s-maxage=3600');
@@ -42,9 +31,9 @@ const sitemap = (pages: string[]) => `<?xml version="1.0" encoding="UTF-8" ?>
     .map(
       (page) => `
   <url>
-    <loc>${site}/${page}</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
+    <loc>${site}${page}</loc>
+    <changefreq>weekly</changefreq>
+    <priority>${page === '' ? '1.0' : '0.8'}</priority>
   </url>
   `
     )

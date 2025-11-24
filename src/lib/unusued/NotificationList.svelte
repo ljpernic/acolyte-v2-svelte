@@ -27,11 +27,3 @@
   </Button>
 </Popover>
 
-<!--
-@component
-[Go to docs](https://flowbite-svelte-admin-dashboard.vercel.app/)
-## Type
-[NotificationListProps](https://github.com/themesberg/flowbite-svelte-admin-dashboard/blob/main/src/lib/types.ts#L552)
-## Props
-@prop notifications
--->

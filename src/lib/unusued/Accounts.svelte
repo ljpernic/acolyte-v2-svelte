@@ -49,17 +49,3 @@
   {/if}
 </Card>
 
-<!--
-@component
-[Go to docs](https://flowbite-svelte-admin-dashboard.vercel.app/)
-## Type
-[AccountsProps](https://github.com/themesberg/flowbite-svelte-admin-dashboard/blob/main/src/lib/types.ts#L569)
-## Props
-@prop children
-@prop users
-@prop title = 'Other accounts'
-@prop headingTag = 'h3'
-@prop headingClass = 'text-xl font-semibold tracking-wide'
-@prop listClass = 'divide-y divide-gray-200 dark:divide-gray-700'
-@prop liClass = 'flex items-center justify-between space-x-4 py-4'
--->

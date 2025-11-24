@@ -80,26 +80,3 @@
   </div>
 </main>
 
-<!--
-@component
-[Go to docs](https://flowbite-svelte-admin-dashboard.vercel.app/)
-## Type
-[SingInProps](https://github.com/themesberg/flowbite-svelte-admin-dashboard/blob/main/src/lib/types.ts#L301)
-## Props
-@prop children
-@prop title = 'Sign in'
-@prop site
-@prop rememberMe = true
-@prop lostPassword = true
-@prop createAccount = true
-@prop lostPasswordLink
-@prop loginTitle = 'Login to your account'
-@prop registerLink
-@prop createAccountTitle = 'Create account'
-@prop mainClass = 'bg-gray-50 dark:bg-gray-900 w-full'
-@prop mainDivClass
-@prop siteLinkClass
-@prop siteImgClass
-@prop cardH1Class
-@prop ...restProps
--->

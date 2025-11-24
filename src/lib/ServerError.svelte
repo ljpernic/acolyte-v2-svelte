@@ -49,20 +49,3 @@
   </div>
 </main>
 
-<!--
-@component
-[Go to docs](https://flowbite-svelte-admin-dashboard.vercel.app/)
-## Type
-[ServerErrorProps](https://github.com/themesberg/flowbite-svelte-admin-dashboard/blob/main/src/lib/types.ts#L214)
-## Props
-@prop title = 'Something has gone seriously wrong'
-@prop description = "It's always time for a coffee break. We should be back by the time you finish your coffee."
-@prop image
-@prop btnTitle = 'Go back home'
-@prop btnHref = '/'
-@prop mainClass = 'bg-gray-50 dark:bg-gray-900'
-@prop mainDivClass
-@prop h1Class
-@prop imgDiv = 'block md:max-w-lg'
-@prop div2Class = 'text-center xl:max-w-4xl'
--->

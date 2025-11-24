@@ -37,15 +37,3 @@
   {/if}
 </Card>
 
-<!--
-@component
-[Go to docs](https://flowbite-svelte-admin-dashboard.vercel.app/)
-## Type
-[TrafficProps](https://github.com/themesberg/flowbite-svelte-admin-dashboard/blob/main/src/lib/types.ts#L528)
-## Props
-@prop chart
-@prop title = 'Traffic by device'
-@prop subtitle = 'Desktop'
-@prop more
-@prop devices
--->

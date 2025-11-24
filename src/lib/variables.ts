@@ -1,11 +1,11 @@
-export const imgDir: string = 'https://flowbite-admin-dashboard.vercel.app/images';
+export const imgDir: string = '';
 
 /**
  * Constructs a path to an avatar image
  * @param src The avatar image filename
  * @returns The full path to the avatar image
  */
-export const avatarPath = (src: string): string => imgDir + '/users/' + src;
+export const avatarPath = (src: string): string => '/images/users/' + src;
 
 /**
  * Constructs a path to any image with optional subdirectories
@@ -13,4 +13,4 @@ export const avatarPath = (src: string): string => imgDir + '/users/' + src;
  * @param subdirs Optional subdirectories to include in the path
  * @returns The full path to the image
  */
-export const imagesPath = (src: string, ...subdirs: string[]): string => [imgDir, ...subdirs, src].filter(Boolean).join('/');
+export const imagesPath = (src: string, ...subdirs: string[]): string => ['/images', ...subdirs, src].filter(Boolean).join('/');
