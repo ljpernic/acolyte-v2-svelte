@@ -359,30 +359,30 @@ async function handleAlertEditor() {
       {#if isEIC}
         <!-- Editable fields -->
         <div>
-          <label class="font-bold mb-1 block text-gray-900 dark:text-white">Title</label>
-          <input type="text" bind:value={title} class="w-full border border-gray-300 dark:border-gray-600 p-2 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white" />
+          <label for="title-id" class="font-bold mb-1 block text-gray-900 dark:text-white">Title</label>
+          <input id="title-id" type="text" bind:value={title} class="w-full border border-gray-300 dark:border-gray-600 p-2 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white" />
         </div>
         <div>
-          <label class="font-bold mb-1 block text-gray-900 dark:text-white">Name</label>
-          <input type="text" bind:value={name} class="w-full border border-gray-300 dark:border-gray-600 p-2 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white" />
+          <label for="name-id" class="font-bold mb-1 block text-gray-900 dark:text-white">Name</label>
+          <input id="name-id" type="text" bind:value={name} class="w-full border border-gray-300 dark:border-gray-600 p-2 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white" />
         </div>
         <div>
-          <label class="font-bold mb-1 block text-gray-900 dark:text-white">Email</label>
-          <input type="email" bind:value={email} class="w-full border border-gray-300 dark:border-gray-600 p-2 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white" />
+          <label for="email-id" class="font-bold mb-1 block text-gray-900 dark:text-white">Email</label>
+          <input id="email-id" type="email" bind:value={email} class="w-full border border-gray-300 dark:border-gray-600 p-2 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white" />
         </div>
         {:else}
         <!-- Read-only fields -->
         <div>
-          <label class="font-bold mb-1 block text-gray-900 dark:text-white">Title</label>
-          <input type="text" value={title} readonly class="w-full border border-gray-300 dark:border-gray-600 p-2 rounded bg-blue-100 dark:bg-blue-900 text-gray-900 dark:text-gray-100" />
+          <label for="title-id-2" class="font-bold mb-1 block text-gray-900 dark:text-white">Title</label>
+          <input for="title-id-2" type="text" value={title} readonly class="w-full border border-gray-300 dark:border-gray-600 p-2 rounded bg-blue-100 dark:bg-blue-900 text-gray-900 dark:text-gray-100" />
         </div>
         <div>
-          <label class="font-bold mb-1 block text-gray-900 dark:text-white">Name</label>
-          <input type="text" value={name} readonly class="w-full border border-gray-300 dark:border-gray-600 p-2 rounded bg-blue-100 dark:bg-blue-900 text-gray-900 dark:text-gray-100" />
+          <label for="name-id-2" class="font-bold mb-1 block text-gray-900 dark:text-white">Name</label>
+          <input id="name-id-2" type="text" value={name} readonly class="w-full border border-gray-300 dark:border-gray-600 p-2 rounded bg-blue-100 dark:bg-blue-900 text-gray-900 dark:text-gray-100" />
         </div>
         <div>
-          <label class="font-bold mb-1 block text-gray-900 dark:text-white">Email</label>
-          <input type="email" value={email} readonly class="w-full border border-gray-300 dark:border-gray-600 p-2 rounded bg-blue-100 dark:bg-blue-900 text-gray-900 dark:text-gray-100" />
+          <label for="email-id-2" class="font-bold mb-1 block text-gray-900 dark:text-white">Email</label>
+          <input id="email-id-2" type="email" value={email} readonly class="w-full border border-gray-300 dark:border-gray-600 p-2 rounded bg-blue-100 dark:bg-blue-900 text-gray-900 dark:text-gray-100" />
         </div>
       {/if}
 
@@ -428,8 +428,9 @@ async function handleAlertEditor() {
   <!-- Right Column -->
   <div class="flex flex-col space-y-4">
     <div>
-      <label class="font-bold mb-1 block text-gray-900 dark:text-white">Reply Email {pendingStatus}</label>
+      <label for="reply-email" class="font-bold mb-1 block text-gray-900 dark:text-white">Reply Email {pendingStatus}</label>
       <textarea 
+        id="reply-email"
         bind:value={emailTemplate} 
         class="w-full border border-gray-300 dark:border-gray-600 p-2 rounded text-gray-900 dark:text-white {canEditEmail ? 'bg-white dark:bg-gray-700' : 'bg-blue-100 dark:bg-blue-900'}" 
         rows="14"
@@ -439,8 +440,9 @@ async function handleAlertEditor() {
 
     <!-- Notes (editable for all users) -->
     <div>
-      <label class="font-bold mb-1 block text-gray-900 dark:text-white">Reader Notes</label>
+      <label for="reader-notes" class="font-bold mb-1 block text-gray-900 dark:text-white">Reader Notes</label>
       <textarea 
+        id="reader-notes"
         bind:value={readerNote} 
         class="w-full border border-gray-300 dark:border-gray-600 p-2 rounded text-gray-900 dark:text-white {canEditEmail ? 'bg-white dark:bg-gray-700' : 'bg-blue-100 dark:bg-blue-900'}" 
         rows="8"

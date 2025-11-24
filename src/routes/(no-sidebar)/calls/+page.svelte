@@ -129,8 +129,9 @@ function getEnabledFieldsList(formFields: any) {
 <div class="mb-6 space-y-4">
   <!-- Search -->
   <div class="flex space-x-2">
-    <label class="block text-sm font-medium text-gray-700 mb-1 dark:text-white">Search</label>
+    <label for="search" class="block text-sm font-medium text-gray-700 dark:text-white mb-1">Search</label>
     <input
+      id="search"
       type="text"
       placeholder="Search title or description..."
       bind:value={searchTerm}
@@ -160,8 +161,9 @@ function getEnabledFieldsList(formFields: any) {
   <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
     <!-- Status Filter -->
     <div>
-      <label class="block text-sm font-medium text-gray-700 mb-1 dark:text-white">Status</label>
+      <label for="status-id" class="block text-sm font-medium text-gray-700 mb-1 dark:text-white">Status</label>
       <select
+        id="status-id"
         bind:value={statusFilter}
         on:change={filterByStatus}
         class="w-full px-3 py-2 border border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -175,8 +177,9 @@ function getEnabledFieldsList(formFields: any) {
 
     <!-- Type Filter -->
     <div>
-      <label class="block text-sm font-medium text-gray-700 mb-1 dark:text-white">Type</label>
+      <label for="type-id" class="block text-sm font-medium text-gray-700 mb-1 dark:text-white">Type</label>
       <select
+        id="type-id"
         bind:value={typeFilter}
         on:change={filterByType}
         class="w-full px-3 py-2 border border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -190,8 +193,9 @@ function getEnabledFieldsList(formFields: any) {
 
     <!-- Sort By -->
     <div>
-      <label class="block text-sm font-medium text-gray-700 mb-1 dark:text-white">Sort By</label>
+      <label for="sort-by" class="block text-sm font-medium text-gray-700 mb-1 dark:text-white">Sort By</label>
       <select
+        id="sort-by"
         bind:value={sortBy}
         on:change={filterBySort}
         class="w-full px-3 py-2 border border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -206,8 +210,9 @@ function getEnabledFieldsList(formFields: any) {
 
     <!-- Sort Order -->
     <div>
-      <label class="block text-sm font-medium text-gray-700 mb-1 dark:text-white">Order</label>
+      <label for="order-id" class="block text-sm font-medium text-gray-700 mb-1 dark:text-white">Order</label>
       <button
+        id="order-id"
         on:click={() => {
           sortOrder = sortOrder === 'desc' ? 'asc' : 'desc';
           filterBySort();

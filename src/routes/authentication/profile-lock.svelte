@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { ProfileLock, imagesPath } from '$lib';
+  //import { ProfileLock, imagesPath } from '$lib';
   import { Input, Label } from 'flowbite-svelte';
-  import Users from '../data/users.json';
+  //import Users from '../data/users.json';
   import MetaTag from '$lib/utils/MetaTag.svelte';
   const onSubmit = (e: Event) => {
     const formData = new FormData(e.target as HTMLFormElement);

@@ -243,8 +243,9 @@
             {#if formFields.submitterName.allowMultiple}
             <div class="grid grid-cols-2 gap-4">
                 <div>
-                <label class="block text-sm font-medium mb-1">Minimum authors</label>
+                <label for="min-author" class="block text-sm font-medium mb-1">Minimum authors</label>
                 <input 
+                    id="min-author"
                     type="number" 
                     bind:value={formFields.submitterName.min}
                     min="1"
@@ -252,8 +253,9 @@
                 />
                 </div>
                 <div>
-                <label class="block text-sm font-medium mb-1">Maximum authors</label>
+                <label for="max-author" class="block text-sm font-medium mb-1">Maximum authors</label>
                 <input 
+                    id="max-author"
                     type="number" 
                     bind:value={formFields.submitterName.max}
                     min="1"
@@ -263,8 +265,9 @@
             </div>
             {/if}
             <div>
-            <label class="block text-sm font-medium mb-1">Field description</label>
+            <label for="field-desc-1" class="block text-sm font-medium mb-1">Field description</label>
             <input 
+                id="field-desc-1"
                 type="text" 
                 bind:value={formFields.submitterName.description}
                 class="w-full border border-gray-300 dark:bg-gray-500 rounded px-3 py-2"
@@ -317,8 +320,9 @@
             {#if formFields.piecesPerSubmission.allowMultiple}
               <div class="grid grid-cols-2 gap-4">
                 <div>
-                  <label class="block text-sm font-medium mb-1">Minimum pieces</label>
+                  <label for="min-pieces" class="block text-sm font-medium mb-1">Minimum pieces</label>
                   <input 
+                    id="min-pieces"
                     type="number" 
                     bind:value={formFields.piecesPerSubmission.min}
                     min="1"
@@ -326,8 +330,9 @@
                   />
                 </div>
                 <div>
-                  <label class="block text-sm font-medium mb-1">Maximum pieces</label>
+                  <label for="max-pieces" class="block text-sm font-medium mb-1">Maximum pieces</label>
                   <input 
+                    id="max-pieces"
                     type="number" 
                     bind:value={formFields.piecesPerSubmission.max}
                     min="1"
@@ -337,8 +342,9 @@
               </div>
             {/if}
             <div>
-              <label class="block text-sm font-medium mb-1">Field description</label>
+              <label for="field-desc-2" class="block text-sm font-medium mb-1">Field description</label>
               <input 
+                id="field-desc-2"
                 type="text" 
                 bind:value={formFields.piecesPerSubmission.description}
                 class="w-full border border-gray-300 dark:bg-gray-500 rounded px-3 py-2"
@@ -380,8 +386,9 @@
           
             {#if formFields.submitterEmail.visible}
             <div class="ml-6">
-                <label class="block text-sm font-medium mb-1">Field description</label>
-                <input 
+              <label for="field-desc-3" class="block text-sm font-medium mb-1">Field description</label>
+              <input 
+                id="field-desc-3"
                 type="text" 
                 bind:value={formFields.submitterEmail.description}
                 class="w-full border border-gray-300 dark:bg-gray-500 rounded px-3 py-2"
@@ -419,8 +426,9 @@
             <div class="ml-6 space-y-3">
               <div class="grid grid-cols-2 gap-4">
                 <div>
-                  <label class="block text-sm font-medium mb-1">Minimum words</label>
+                  <label for="min-words" class="block text-sm font-medium mb-1">Minimum words</label>
                   <input 
+                    id="min-words"
                     type="number" 
                     bind:value={formFields.wordCount.min}
                     min="0"
@@ -429,8 +437,9 @@
                   />
                 </div>
                 <div>
-                  <label class="block text-sm font-medium mb-1">Maximum words</label>
+                  <label for="max-words" class="block text-sm font-medium mb-1">Maximum words</label>
                   <input 
+                    id="max-words"
                     type="number" 
                     bind:value={formFields.wordCount.max}
                     min="1"
@@ -440,8 +449,9 @@
                 </div>
               </div>
               <div>
-                <label class="block text-sm font-medium mb-1">Field description</label>
+                <label for="field-desc-4" class="block text-sm font-medium mb-1">Field description</label>
                 <input 
+                  id="field-desc-4"
                   type="text" 
                   bind:value={formFields.wordCount.description}
                   class="w-full border border-gray-300 dark:bg-gray-500 rounded px-3 py-2"
@@ -481,8 +491,9 @@
           
           {#if formFields.offerFeedback.visible}
             <div class="ml-6">
-              <label class="block text-sm font-medium mb-1">Field description</label>
+              <label for="field-desc-5" class="block text-sm font-medium mb-1">Field description</label>
               <input 
+                id="field-desc-5"
                 type="text" 
                 bind:value={formFields.offerFeedback.description}
                 class="w-full border border-gray-300 dark:bg-gray-500 rounded px-3 py-2"
@@ -520,8 +531,9 @@
           
           {#if formFields.coverLetter.visible}
             <div class="ml-6">
-              <label class="block text-sm font-medium mb-1">Field description</label>
+              <label for="field-desc-6" class="block text-sm font-medium mb-1">Field description</label>
               <input 
+                id="field-desc-6"
                 type="text" 
                 bind:value={formFields.coverLetter.description}
                 class="w-full border border-gray-300 dark:bg-gray-500 rounded px-3 py-2"
@@ -559,8 +571,9 @@
           
           {#if formFields.fileUpload.visible}
             <div class="ml-6">
-              <label class="block text-sm font-medium mb-1">Field description</label>
+              <label for="field-desc-7" class="block text-sm font-medium mb-1">Field description</label>
               <input 
+                id="field-desc-7"
                 type="text" 
                 bind:value={formFields.fileUpload.description}
                 class="w-full border border-gray-300 dark:bg-gray-500 rounded px-3 py-2"

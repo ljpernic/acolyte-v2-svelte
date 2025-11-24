@@ -26,19 +26,19 @@
 
   <NavUl class="ms-8 me-auto">
       <NavLi>
-        <a href="/pages/about" sveltekit:prefetch>About</a>
+        <a href="/pages/about" data-sveltekit-preload-data="hover">About</a>
       </NavLi>
       <NavLi>
-        <a href="/pages/presses" sveltekit:prefetch>Presses</a>
+        <a href="/pages/presses" data-sveltekit-preload-data="hover">Presses</a>
       </NavLi>
       <NavLi>
-        <a href="/pages/features" sveltekit:prefetch>Features</a>
+        <a href="/pages/features" data-sveltekit-preload-data="hover">Features</a>
       </NavLi>
       <NavLi>
-        <a href="/pages/guides" sveltekit:prefetch>Guides</a>
+        <a href="/pages/guides" data-sveltekit-preload-data="hover">Guides</a>
       </NavLi>
       <NavLi>
-        <a href="/pages/contact" sveltekit:prefetch>Contact</a>
+        <a href="/pages/contact" data-sveltekit-preload-data="hover">Contact</a>
       </NavLi>
     </NavUl>
     <div class="py-4">
